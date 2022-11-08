@@ -1,8 +1,9 @@
 <script>
   import { productStore, removeProduct } from "$lib/stores/productStore";
 
-  export let token;
+  export let token = "";
   export let canDelete = false;
+  export let shopping = false;
 </script>
 
 <h2>Products List</h2>
@@ -17,6 +18,9 @@
           <button on:click={removeProduct(product.id, token)} class="ml-8"
             >X</button
           >
+        {/if}
+        {#if shopping}
+          <button class="ml-8">+</button>
         {/if}
       </li>
     {/each}
