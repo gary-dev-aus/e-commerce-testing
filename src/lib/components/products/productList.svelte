@@ -3,8 +3,6 @@
 
   export let token;
   export let canDelete = false;
-
-  console.log($productStore);
 </script>
 
 <h2>Products List</h2>

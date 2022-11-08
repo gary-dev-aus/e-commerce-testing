@@ -11,7 +11,6 @@ async function loadProducts() {
     const response = await fetch(url, {
       method: "GET",
     });
-
     data = await response.json();
 
     if (data.error) {

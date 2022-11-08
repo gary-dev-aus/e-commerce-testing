@@ -6,7 +6,7 @@ export async function handle({ event, resolve }) {
     return await resolve(event);
   }
   const response = await fetch(
-    env.PUBLIC_STRAPI_URL + "/api/users/me?populate=role",
+    env.PUBLIC_STRAPI_URL + "/api/users/me?populate=*",
     {
       method: "GET",
       headers: {
@@ -15,8 +15,8 @@ export async function handle({ event, resolve }) {
       },
     }
   );
-
   const user = await response.json();
+
   if (user) {
     event.locals.user = {
       name: user.username,
